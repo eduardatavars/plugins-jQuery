@@ -149,7 +149,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="contato">
         <div class="container">
             <h2>Entre em contato</h2>
             <form>
@@ -210,61 +210,7 @@
     <script src="./js/jquery.mask.min.js"></script>
     <script src="./js/jquery.validate.min.js"></script>
     <script src="./js/messages_pt_BR.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#carousel-imagens').slick({
-                autoplay: true,
-                arrows: false, //remove as setas
-                dots: false, //remove os pontos de navegação
-            });
-
-            $('.menu-hamburguer').click(function () {
-                $('nav').slideToggle();
-            });
-
-            /*
-            let mascara = if(celular) ? (00) 00000-0000 : (00) 0000-0000
-            */
-
-            $('#telefone').mask('(00) 00000-0000', {
-                placeholder: '(99) 99999-9999'
-            });
-
-            $('form').validate({
-                rules: {
-                    nome: {
-                        required: true
-                    },
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    telefone: {
-                        required: true
-                    },
-                    mensagem: {
-                        required: true
-                    },
-                    veiculoInteresse: {
-                        required: false
-                    }
-
-                },
-                messages: {
-                    nome: 'Por favor, insira o seu nome'
-                },
-                submiteHandler: function(form) {
-                    console.log(form)
-                },
-                invalidHandler: function(evento, validador) {
-                    let camposIncorretos = validador.numberOfInvalids();
-                    if (camposIncorretos) {
-                        alert(`Existem ${camposIncorretos} campos incorretos`)
-                    } 
-                }
-            })
-        })
-    </script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
